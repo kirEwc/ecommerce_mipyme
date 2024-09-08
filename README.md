@@ -1,4 +1,17 @@
-An eCommerce app is a digital platform that allows users to browse products, add them to a shopping cart, and make secure payments. The interface is intuitive and adapts to various devices. It integrates with payment gateways to process transactions and offers key features like product search and filtering. Additionally, it ensures the security of user data and transactions, providing a smooth and reliable shopping experience.
+# eCommerce App
+
+## Description
+
+This project is an eCommerce application designed to provide a seamless shopping experience. It allows users to browse products, add items to a shopping cart, and make secure payments. The app features an intuitive interface that adapts to various devices and integrates with payment gateways for transaction processing. Key functionalities include product search and filtering, and the platform ensures the security of user data and transactions, delivering a smooth and reliable shopping experience.
+
+## Features
+
+- Browse and search for products
+- Add products to a shopping cart
+- Secure payment processing
+- Intuitive and responsive design
+- Integration with payment gateways
+- User data and transaction security
 
 ## Creators
 
