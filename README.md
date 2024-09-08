@@ -1,1 +1,1 @@
-no se que poner en el pto readme.. luego lo cambio ñee
+An eCommerce app is a digital platform that allows users to browse products, add them to a shopping cart, and make secure payments. The interface is intuitive and adapts to various devices. It integrates with payment gateways to process transactions and offers key features like product search and filtering. Additionally, it ensures the security of user data and transactions, providing a smooth and reliable shopping experience.
