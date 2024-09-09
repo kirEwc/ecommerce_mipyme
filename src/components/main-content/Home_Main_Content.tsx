@@ -1,5 +1,5 @@
 import React from 'react'
-import CardCustom from '../Card/Card'
+import CardCustom from '../Next_ui_elements/Card'
 
 export const Home_Main_Content = () => {
 

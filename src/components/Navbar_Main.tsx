@@ -7,7 +7,6 @@ import {
   SearchIcon,
   ShoppingCarIcon,
   SunIcon,
-  UserIcon,
 } from "@/icons/Icons";
 import {
   Link,
@@ -18,6 +17,7 @@ import {
   Switch,
 } from "@nextui-org/react";
 import React from "react";
+import DropdownCustom from "./Next_ui_elements/Dropdown";
 
 export default function Navbar_Main() {
   
@@ -78,7 +78,8 @@ export default function Navbar_Main() {
         </NavbarItem>
 
         <NavbarItem >
-            <UserIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
+          {/* aqui va lo del dropdown */}
+          <DropdownCustom/>
         </NavbarItem>
 
       </NavbarContent>
