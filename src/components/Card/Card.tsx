@@ -1,5 +1,5 @@
 import React from "react";
-import {Card, CardHeader, CardBody, Image} from "@nextui-org/react";
+import {Card, CardHeader, CardBody, Image, CardFooter} from "@nextui-org/react";
 
 interface CardProps {
   name: string;
@@ -15,14 +15,18 @@ const CardCustom:React.FC<CardProps> = ({name, src, price}) => {
           className="object-cover rounded-xl"
           src={src}
           width={270}
+          height={200}
         />
       </CardHeader>
         
       <CardBody className="overflow-visible py-2">
-        <p className="text-tiny uppercase font-bold">{price}</p>
         <small className="text-default-500">12 Tracks</small>
         <h4 className="font-bold text-large">Frontend Radio</h4>
       </CardBody>
+      <CardFooter className="pt-0 pb-2 px-4">
+        <p className="text-tiny uppercase font-bold">{price}</p>
+
+      </CardFooter>
     </Card>
   );
 }

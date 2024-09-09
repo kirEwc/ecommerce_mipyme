@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar_Main from "@/components/Navbar_Main";
 import { Footer } from "@/components/Footer";
 import { Banner } from "@/components/Publicity/Banner";
 import { Providers } from "./providers";
@@ -35,7 +35,7 @@ export default function RootLayout({
         <Banner/>
 
         <Providers>
-        <Navbar />
+        <Navbar_Main />
         {children}
         </Providers>
           
