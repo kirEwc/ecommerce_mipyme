@@ -4,7 +4,7 @@ import React from "react";
 export const PublicityRight = () => {
   return (
     <>
-      <div className="relative w-1/2 h-64 mx-auto mt-2 ">
+      <div className="relative w-1/2 h-64 mx-auto mt-2 hidden lg:block ">
   <Image
     src="/images/publicity/868.webp"
     alt="publicityLeft"
