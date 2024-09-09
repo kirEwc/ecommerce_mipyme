@@ -18,21 +18,46 @@ export const Footer = () => {
               </h2>
 
               <div className="flex space-x-6">
-                <div>
-                  <Facebook className="w-6 h-6" />
-                </div>
-                <div>
-                  <Twitter className="w-6 h-6" />
-                </div>
-                <div>
-                  <WhatsApp className="w-6 h-6" />
-                </div>
-                <div>
-                  <Instagram className="w-6 h-6" />
-                </div>
-                <div>
-                  <Github className="w-6 h-6" />
-                </div>
+                <a
+                  href="https://www.facebook.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition duration-300 ease-in-out transform hover:scale-110 hover:opacity-75"
+                >
+                  <Facebook className="w-6 h-6 cursor-pointer" />
+                </a>
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition duration-300 ease-in-out transform hover:scale-110 hover:opacity-75"
+                >
+                  <Twitter className="w-6 h-6 cursor-pointer" />
+                </a>
+                <a
+                  href="https://wa.me"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition duration-300 ease-in-out transform hover:scale-110 hover:opacity-75"
+                >
+                  <WhatsApp className="w-6 h-6 cursor-pointer" />
+                </a>
+                <a
+                  href="https://www.instagram.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition duration-300 ease-in-out transform hover:scale-110 hover:opacity-75"
+                >
+                  <Instagram className="w-6 h-6 cursor-pointer" />
+                </a>
+                <a
+                  href="https://github.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition duration-300 ease-in-out transform hover:scale-110 hover:opacity-75"
+                >
+                  <Github className="w-6 h-6 cursor-pointer" />
+                </a>
               </div>
             </div>
           </div>
