@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Banner } from "@/components/Publicity/Banner";
+import { Providers } from "./providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -32,10 +33,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Banner/>
+
+        <Providers>
         <Navbar />
-
         {children}
-
+        </Providers>
+          
         <Footer/>
       </body>
     </html>

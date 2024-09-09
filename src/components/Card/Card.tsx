@@ -8,8 +8,8 @@ interface CardProps {
 }
 const CardCustom:React.FC<CardProps> = ({name, src, price}) => {
   return (
-    <Card className="py-4">
-      <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+    <Card className="bg-slate-200 py-4">
+      <CardHeader className=" pb-0 pt-2 px-4 flex-col items-start">
         <Image
           alt={name}
           className="object-cover rounded-xl"
