@@ -3,7 +3,7 @@ import {Dropdown, DropdownTrigger, DropdownMenu, DropdownItem, } from "@nextui-o
 
 export default function DropdownCustom() {
   return (
-    <Dropdown className="w-1/2">
+    <Dropdown>
       <DropdownTrigger>
         <button className="focus:outline-none focus:ring-0">
           <UserIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />

@@ -5,10 +5,11 @@ interface CardProps {
   name: string;
   src: string;
   price: number;
+  className?: string;
 }
-const CardCustom:React.FC<CardProps> = ({name, src, price}) => {
+const CardCustom:React.FC<CardProps> = ({name, src, price,className}) => {
   return (
-    <Card className="bg-slate-200 py-4">
+    <Card className={`bg-slate-200 py-4 ${className}`} >
       <CardHeader className=" pb-0 pt-2 px-4 flex-col items-start">
         <Image
           alt={name}

@@ -1,8 +1,9 @@
 "use client";
 
+import DropdownCustom from "./Next_ui_elements/Dropdown";
+
 import {
   HeartIcon,
-  // MenuIcon,
   MoonIcon,
   SearchIcon,
   ShoppingCarIcon,
@@ -16,15 +17,10 @@ import {
   NavbarItem,
   Switch,
 } from "@nextui-org/react";
-import React from "react";
-import DropdownCustom from "./Next_ui_elements/Dropdown";
 
 export default function Navbar_Main() {
-  
-
   return (
-  
-    <Navbar shouldHideOnScroll className="bg-white shadow-md sticky" >
+    <Navbar shouldHideOnScroll className="bg-white shadow-md sticky">
       <NavbarBrand>
         <p className="text-2xl font-bold text-pink-500">Tropical Market</p>
       </NavbarBrand>
@@ -36,7 +32,7 @@ export default function Navbar_Main() {
           </Link>
         </NavbarItem>
         <NavbarItem className="text-gray-600 hover:text-pink-500 transition duration-300">
-          <Link color="foreground" href="#" >
+          <Link color="foreground" href="#">
             Customers
           </Link>
         </NavbarItem>
@@ -47,39 +43,35 @@ export default function Navbar_Main() {
         </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
-
-        <NavbarItem >
-        <SearchIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
-        </NavbarItem>
-                  
-
-        <NavbarItem >
-            <HeartIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
+        <NavbarItem>
+          <SearchIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
         </NavbarItem>
 
-        <NavbarItem >
-            <ShoppingCarIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
+        <NavbarItem>
+          <HeartIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
         </NavbarItem>
 
-        <NavbarItem >
-            <Switch
-      defaultSelected
-      size="lg"
-      color="secondary"
-      thumbIcon={({ isSelected, className }) =>
-        isSelected ? (
-          <MoonIcon className={className} />
-        ) : (
-          <SunIcon className={className} />
-        )
-      }
-    >
-    </Switch>
+        <NavbarItem>
+          <ShoppingCarIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
         </NavbarItem>
 
-        <NavbarItem >
-          {/* aqui va lo del dropdown */}
-          <DropdownCustom/>
+        <NavbarItem>
+          <Switch
+            defaultSelected
+            size="lg"
+            color="secondary"
+            thumbIcon={({ isSelected=false, className }) =>
+              isSelected ? (
+                <MoonIcon className={className} />
+              ) : (
+                <SunIcon className={className} />
+              )
+            }
+          ></Switch>
+        </NavbarItem>
+
+        <NavbarItem>
+          <DropdownCustom />
         </NavbarItem>
 
       </NavbarContent>
