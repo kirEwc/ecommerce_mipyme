@@ -39,7 +39,7 @@ export const Footer = () => {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-700 dark:border-gray-600 text-center">
-            <p>© 2024 Tropical Market. Casi todos los derechos reservados.</p>
+            <p>© 2024 Tropical Market.Todos los derechos reservados.</p>
           </div>
         </div>
       </footer>
