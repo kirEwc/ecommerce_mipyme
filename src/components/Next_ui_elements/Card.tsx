@@ -15,7 +15,7 @@ const CardCustom:React.FC<CardProps> = ({name, src, price,className}) => {
           alt={name}
           className="object-cover rounded-xl"
           src={src}
-          width={270}
+          width={300}
           height={200}
         />
       </CardHeader>

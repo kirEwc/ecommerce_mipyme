@@ -1,6 +1,12 @@
 "use client";
 
-
+import {
+  HeartIcon,
+  MoonIcon,
+  SearchIcon,
+  ShoppingCarIcon,
+  SunIcon,
+} from "@/icons/Icons";
 
 import {
   Link,
@@ -8,11 +14,11 @@ import {
   NavbarBrand,
   NavbarContent,
   NavbarItem,
+  Switch,
   
 } from "@nextui-org/react";
 import Sidebar from "./Sidebar";
-import { Content_Navbar_end } from "./Content_Navbar_end";
-import { ShoppingCarIcon } from "@/icons/Icons";
+import DropdownCustom from "@/components/Next_ui_elements/Dropdown";
 
 export default function Navbar_Main() {
   return (
@@ -46,7 +52,39 @@ export default function Navbar_Main() {
       </NavbarContent>
 
       {/* contenido 3 */}
-      <Content_Navbar_end/>
+      <NavbarContent className="hidden sm:flex" justify="end">
+        <NavbarItem>
+          <SearchIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
+        </NavbarItem>
+
+        <NavbarItem>
+          <HeartIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
+        </NavbarItem>
+
+        <NavbarItem>
+          <ShoppingCarIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
+        </NavbarItem>
+
+        <NavbarItem>
+          <Switch
+            defaultSelected
+            size="lg"
+            color="secondary"
+            thumbIcon={({ isSelected=false, className }) =>
+              isSelected ? (
+                <MoonIcon className={className} />
+              ) : (
+                <SunIcon className={className} />
+              )
+            }
+          ></Switch>
+        </NavbarItem>
+
+        <NavbarItem>
+          <DropdownCustom />
+        </NavbarItem>
+
+      </NavbarContent>
       
     </Navbar>
   );
