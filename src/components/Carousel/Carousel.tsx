@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Image from "next/image"; // Importamos Image de Next.js
+import Image from "next/image"; 
 
 interface CarouselProps {
   images: string[];

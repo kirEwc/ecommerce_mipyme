@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { User } from "@/icons/Icons";
+import { Google, User } from "@/icons/Icons";
 import { validateEmail } from "@/auth/validateEmail";
 import { validatePassword } from "@/auth/validatePassword";
 import CorrectMessage from "@/messages/CorrectMessage";
@@ -10,6 +10,8 @@ import ButtonNext from "@/components/Next_ui_elements/button/ButtonNext";
 import InputPassword from "@/components/Next_ui_elements/inputPassword/InputPassword";
 import InputEmail from "@/components/Next_ui_elements/inputPassword/InputEmail";
 import { signIn } from "next-auth/react";
+import CustomLink from "@/components/Next_ui_elements/link/Link";
+
 
 
 
@@ -37,7 +39,7 @@ const Login: React.FC = () => {
 
   };
 
-  const handleGoogleLogin = async () => {   
+  const handleGoogleLogin = async () => {
     await signIn('google');
   };
 
@@ -45,6 +47,7 @@ const Login: React.FC = () => {
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
 
     if (!validateEmail(email)) {
       errorMessage('email inválido!');
@@ -66,9 +69,9 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <div className="h-screen w-screen">
+       <div className="h-screen w-screen bg-[url('/images/fondo/1.webp')] bg-cover bg-center bg-no-repeat">
         <div className="flex justify-center items-center h-full ">
-          <div className="border border-t-small border-solid w-80 h-80 rounded-2xl bg-gradient-to-br from-pink-400  to-purple-700 ">
+          <div className="border border-t-small border-solid w-80 h-80 rounded-2xl bg-gradient-to-b from-blue-400 to-blue-700 ">
             <div className="flex justify-center mb-4 mt-4">
               <User className="text-5xl text-white opacity-90" />
             </div>
@@ -89,26 +92,39 @@ const Login: React.FC = () => {
                   />
                 </div>
 
-                <div className="mt-4">
+                <div className="mt-3">
                   <ButtonNext
                     text="Iniciar sección"
                     type="submit"
                   />
                 </div>
 
+                <div className="mt-3">
+                  <ButtonNext
+                    icon={<Google className="h-6 w-6" />}
+                    text="Iniciar con Google"
+                    onClick={handleGoogleLogin}
 
+                  >
+                  </ButtonNext>
+                </div>
 
               </div>
             </form>
 
-            <div className="mt-4">
-              <ButtonNext
-                text="Iniciar con Google"
-                onClick={handleGoogleLogin}
-              >
-                
-              </ButtonNext>
+            <div className="flex justify-between mt-2 mx-2">
+              <CustomLink
+                href="/code"
+                text="Olvidaste la contraseña"
+                className="text-white"
+              />
+              <CustomLink
+                href="/code"
+                text="Regístrate"
+                className="text-white"
+              />
             </div>
+
 
           </div>
         </div>
