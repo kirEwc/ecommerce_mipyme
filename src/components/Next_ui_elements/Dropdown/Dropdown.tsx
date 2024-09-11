@@ -6,7 +6,7 @@ export default function DropdownCustom() {
     <Dropdown>
       <DropdownTrigger>
         <button className="focus:outline-none focus:ring-0">
-          <UserIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
+          <UserIcon className="h-6 w-6 text-gray-500 hover:text-cyan-500 transition duration-300 cursor-pointer" />
         </button>
         
       </DropdownTrigger>
