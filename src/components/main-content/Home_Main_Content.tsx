@@ -6,7 +6,7 @@ import { products } from '@/data/products';
 
 
 export const Home_Main_Content = () => {
-
+    
   
   const router = useRouter();
 
@@ -28,13 +28,14 @@ export const Home_Main_Content = () => {
             <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105">
               <button 
                 onClick={() => handleClick(product.id)} 
-                className="focus:outline-none focus:ring-0"
+                className="focus:outline-none focus:ring-0 h-full w-full"
                 >
               <CardCustom
                 name={product.name}
+                brand={product.brand}
                 src={product.image}
                 price={product.price}
-                className=''
+                className='w-full h-full'
               />
               </button>
             </div>
