@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import CardCustom from '../Next_ui_elements/Card'
+import CardCustom from '../Next_ui_elements/Card/Card'
 import { useRouter } from "next/navigation";
 import { products } from '@/data/products';
 

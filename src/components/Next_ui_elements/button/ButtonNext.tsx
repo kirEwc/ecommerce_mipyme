@@ -7,7 +7,8 @@ type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   className?: string;
-   radius?: string
+   radius?: "full" | "none" | "sm" | "md" | "lg"
+   icon?: React.ReactNode
 };
 
 const ButtonNext: React.FC<ButtonProps> = ({ 
@@ -16,16 +17,19 @@ const ButtonNext: React.FC<ButtonProps> = ({
   type = 'button', 
   disabled = false, 
   className = 'bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg w-52',
-  
+  icon,
+  radius = 'full'
 }) => {
   return (
     <Button
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={className}     
+      className={className}
+      radius={radius}     
     >
       {text}
+      {icon && <span className="ml-2">{icon}</span>}
     </Button>
   );
 };
