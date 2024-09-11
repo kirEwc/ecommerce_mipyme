@@ -1,18 +1,20 @@
+'use client'
 import React from 'react'
 import CardCustom from '../Next_ui_elements/Card'
+import { useRouter } from "next/navigation";
+import { products } from '@/data/products';
+
 
 export const Home_Main_Content = () => {
+    
+  
+  const router = useRouter();
 
-  const products = [
-    { id: 1, name: "Vestido floral", price: 19.99, image: "/images/product/website-development.webp" },
-    { id: 2, name: "Blusa de encaje", price: 15.99, image: "/images/product/2151072199.webp" },
-    { id: 3, name: "Jeans ajustados", price: 29.99, image: "/images/product/2151074251.webp" },
-    { id: 4, name: "Chaqueta de cuero", price: 49.99, image: "/images/product/website-development.webp" },
-    { id: 5, name: "Falda plisada", price: 24.99, image: "/images/product/2151072199.webp" },
-    { id: 6, name: "Camiseta gráfica", price: 12.99, image: "/images/product/2151074251.webp" },
-    { id: 7, name: "Sudadera con capucha", price: 34.99, image: "/images/product/website-development.webp" },
-    { id: 8, name: "Pantalones cargo", price: 39.99, image: "/images/product/2151074251.webp" },
-  ]
+  const handleClick = (id: string) => {
+    router.push(`/tendencias/${id}`);
+  };
+
+
   return (
     <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
       <div className="flex items-center justify-center">
@@ -24,12 +26,18 @@ export const Home_Main_Content = () => {
         <div className="grid grid-cols-1 mr-3 ml-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <button 
+                onClick={() => handleClick(product.id)} 
+                className="focus:outline-none focus:ring-0 h-full w-full"
+                >
               <CardCustom
                 name={product.name}
+                brand={product.brand}
                 src={product.image}
                 price={product.price}
-                className=''
+                className='w-full h-full'
               />
+              </button>
             </div>
           ))}
         </div>

@@ -5,8 +5,10 @@ import { PublicityRight } from "@/components/Publicity/PublicityRight";
 import { images } from "@/ImagePath";
 import { Divider } from "@nextui-org/react";
 
+
 export default function Home() {
-    return (
+  
+  return (
       <>   
         <Divider />
         <div className="flex justify-between items-center gap-4 p-4">
