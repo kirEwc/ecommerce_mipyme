@@ -28,8 +28,8 @@ const ButtonNext: React.FC<ButtonProps> = ({
       className={className}
       radius={radius}     
     >
-      {text}
       {icon && <span className="ml-2">{icon}</span>}
+      {text}
     </Button>
   );
 };

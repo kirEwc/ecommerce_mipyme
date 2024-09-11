@@ -8,6 +8,8 @@ import Navbar_Main from "@/components/ui/Navbar/Navbar_Main";
 import { Footer } from "@/components/ui/Footer";
 import 'react-toastify/dist/ReactToastify.css';
 import ToastContainerMessage from "@/messages/ToastContainerMessage";
+import ClientOnlyLayout from "./clientLayout";
+
 
 
 const geistSans = localFont({
@@ -31,18 +33,20 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
+
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <Banner/>
-  
-        <Providers>
-        <Navbar_Main />
-        {children}
-        </Providers>
-        <Footer />  
+      >      
+        <Providers>          
+          <ClientOnlyLayout>
+          {children}
+          </ClientOnlyLayout>
+        </Providers>      
         <ToastContainerMessage />
       </body>
     </html>
