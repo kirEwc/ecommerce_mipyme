@@ -78,14 +78,14 @@ const Tendencias = () => {
       <p className="text-xl sm:text-2xl font-bold text-gray-600 mb-2">${totalPrice.toFixed(2)}</p>
 
       <div className="ml-4  flex items-center">
-        {/* <button
+        <button
           onClick={handleDecrease}
-          className="px-2 py-1 w-8 h-8 rounded-full bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:bg-gradient-to-tr dark:from-pink-400 dark:to-purple"
+          className="px-2 py-1 w-8 h-8 rounded-full bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:bg-gradient-to-tr dark:from-pink-400 dark:to-purple transform transition duration-150 ease-in-out active:scale-105 active:translate-y-1 active:translate-x-1"
         >
           <Minus className="w-4 h-4  dark:text-white" />
-        </button> */}
+        </button>
 
-        <ButtonNext
+        {/* <ButtonNext
           type="button"
           onClick={handleDecrease}
           disabled={false}
@@ -93,16 +93,16 @@ const Tendencias = () => {
           icon={<Minus className=" h-4 w-4 dark:text-white " />}
           text=""
           radius={'full'}
-        />
+        /> */}
 
         <p className="px-4 text-lg">{quantity}</p>
         
-        {/* <button
+        <button
           onClick={handleIncrease}
-          className="px-2 py-1 w-8 h-8 rounded-full bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:from-pink-400 dark:to-purple-600 dark:shadow-white"> 
+          className="px-2 py-1 w-8 h-8 rounded-full bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:from-pink-400 dark:to-purple-600 dark:shadow-white transform transition duration-150 ease-in-out active:scale-105 active:translate-y-1 active:translate-x-1"> 
           <AddFill className="w-4 h-4 dark:text-white"/>
-        </button> */}
-        <ButtonNext
+        </button>
+        {/* <ButtonNext
           type="button"
           onClick={handleIncrease}
           disabled={false}
@@ -110,7 +110,7 @@ const Tendencias = () => {
           icon={<AddFill className=" h-4 w-4 dark:text-white " />}
           text=""
           radius="full"
-        />
+        /> */}
 
       </div>
     </div>

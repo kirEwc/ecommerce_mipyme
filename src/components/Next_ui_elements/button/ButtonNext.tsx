@@ -7,7 +7,7 @@ type ButtonProps = {
   type?: 'button' | 'submit' | 'reset';
   disabled?: boolean;
   className?: string;
-   radius?: "full" | "none" | "sm" | "md" | "lg"
+   radius?:   "none" | "sm" | "md" | "lg"| "full"
    icon?: React.ReactNode
 };
 
