@@ -1,6 +1,7 @@
 "use client";
 
 import { GetProductbyid } from "@/components/Helpers/GetProductbyid";
+import ButtonNext from "@/components/Next_ui_elements/button/ButtonNext";
 import { AddFill, Minus, ShoppingCarIcon } from "@/icons/Icons";
 import Image from 'next/image';
 import { useParams } from "next/navigation";
@@ -77,28 +78,53 @@ const Tendencias = () => {
       <p className="text-xl sm:text-2xl font-bold text-gray-600 mb-2">${totalPrice.toFixed(2)}</p>
 
       <div className="ml-4  flex items-center">
-        <button
+        {/* <button
           onClick={handleDecrease}
           className="px-2 py-1 w-8 h-8 rounded-full bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:bg-gradient-to-tr dark:from-pink-400 dark:to-purple"
         >
           <Minus className="w-4 h-4  dark:text-white" />
-        </button>
+        </button> */}
+
+        <ButtonNext
+          type="button"
+          onClick={handleDecrease}
+          disabled={false}
+          className="w-8 h-8 bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:from-pink-400 dark:to-purple-600 dark:shadow-white"
+          icon={<Minus className=" h-4 w-4 dark:text-white " />}
+          text=""
+          radius={'full'}
+        />
+
         <p className="px-4 text-lg">{quantity}</p>
-        <button
+        
+        {/* <button
           onClick={handleIncrease}
           className="px-2 py-1 w-8 h-8 rounded-full bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:from-pink-400 dark:to-purple-600 dark:shadow-white"> 
           <AddFill className="w-4 h-4 dark:text-white"/>
-        </button>
+        </button> */}
+        <ButtonNext
+          type="button"
+          onClick={handleIncrease}
+          disabled={false}
+          className="w-8 h-8 rounded-full bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:from-pink-400 dark:to-purple-600 dark:shadow-white "
+          icon={<AddFill className=" h-4 w-4 dark:text-white " />}
+          text=""
+          radius="full"
+        />
+
       </div>
     </div>
 
     {/* Agregar al carrito */}
 
-    <button
-      className="flex mt-4 px-4 py-2 w-full sm:w-80 items-center justify-center rounded-lg bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:from-pink-400 dark:to-purple-600 dark:shadow-white  "
-      >
-      Añadir al carrito<ShoppingCarIcon className=" h-6 w-6 text-gray-500 " />
-    </button>
+    <ButtonNext
+    type="button"
+    onClick={() => console.log('Añadir al carrito')}
+    disabled={false}
+    className="flex mt-4 px-4 py-2 w-full sm:w-80 items-center justify-center rounded-lg bg-gradient-to-tr from-gray-100 via-slate-300 to-gray-100 shadow-sm shadow-black dark:from-pink-400 dark:to-purple-600 dark:shadow-white "
+    text={`Añadir al carrito`}
+    icon={<ShoppingCarIcon className=" h-6 w-6 text-gray-500  " />}
+    />
   </div>
 
   

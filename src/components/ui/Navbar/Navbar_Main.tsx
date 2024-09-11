@@ -18,7 +18,7 @@ import {
   
 } from "@nextui-org/react";
 import Sidebar from "./Sidebar";
-import DropdownCustom from "@/components/Next_ui_elements/Dropdown";
+import DropdownCustom from "@/components/Next_ui_elements/Dropdown/Dropdown";
 
 export default function Navbar_Main() {
   return (

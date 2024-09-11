@@ -1,4 +1,4 @@
-import DropdownCustom from "@/components/Next_ui_elements/Dropdown";
+import DropdownCustom from "@/components/Next_ui_elements/Dropdown/Dropdown";
 import {
   Bars3Icon,
   HeartIcon,
