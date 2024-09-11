@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import { User } from "@/icons/Icons";
 import { validateEmail } from "@/auth/validateEmail";
@@ -34,6 +35,10 @@ const Login: React.FC = () => {
       [name]: value,
     }));
 
+  };
+
+  const handleGoogleLogin = async () => {   
+    await signIn('google');
   };
 
 
@@ -97,12 +102,12 @@ const Login: React.FC = () => {
             </form>
 
             <div className="mt-4">
-              <button
-                onClick={() => signIn("google")}
-                className="bg-blue-500 text-white px-4 py-2 rounded-md"
+              <ButtonNext
+                text="Iniciar con Google"
+                onClick={handleGoogleLogin}
               >
-                Iniciar sesión con Google
-              </button>
+                
+              </ButtonNext>
             </div>
 
           </div>
