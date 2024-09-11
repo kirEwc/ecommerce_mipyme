@@ -6,6 +6,8 @@ import { Banner } from "@/components/Publicity/Banner";
 import { Providers } from "@/app/providers";
 import Navbar_Main from "@/components/ui/Navbar/Navbar_Main";
 import { Footer } from "@/components/ui/Footer";
+import 'react-toastify/dist/ReactToastify.css';
+import ToastContainerMessage from "@/messages/ToastContainerMessage";
 
 
 const geistSans = localFont({
@@ -40,7 +42,8 @@ export default function RootLayout({
         <Navbar_Main />
         {children}
         </Providers>
-        <Footer/>  
+        <Footer />  
+        <ToastContainerMessage />
       </body>
     </html>
   );

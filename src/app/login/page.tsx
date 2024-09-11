@@ -1,30 +1,30 @@
 "use client";
 import { useState } from "react";
-import { Button, Input } from "@nextui-org/react";
-import { Email, Password, User, WeuiEyesOffOutlined, WeuiEyesOnOutlined } from "@/icons/Icons";
+import { User } from "@/icons/Icons";
 import { validateEmail } from "@/auth/validateEmail";
 import { validatePassword } from "@/auth/validatePassword";
+import CorrectMessage from "@/messages/CorrectMessage";
+import errorMessage from "@/messages/errorMessage";
+import ButtonNext from "@/components/Next_ui_elements/button/ButtonNext";
+import InputPassword from "@/components/Next_ui_elements/inputPassword/InputPassword";
+import InputEmail from "@/components/Next_ui_elements/inputPassword/InputEmail";
+import { signIn } from "next-auth/react";
 
 
-const Login = () => {
 
-  const [isVisible, setIsVisible] = useState(false);
 
-  const toggleVisibility = () => setIsVisible(!isVisible);
+
+
+
+const Login: React.FC = () => {
 
   const [valueForm, setValueForm] = useState({
     email: '',
     password: '',
   });
 
-  const [validationState, setValidationState] = useState({
-    email: null,
-    password: null,
-  });
-
 
   const { email, password } = valueForm;
-
 
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -33,24 +33,25 @@ const Login = () => {
       ...prevState,
       [name]: value,
     }));
-     
+
   };
 
 
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-   
+
     if (!validateEmail(email)) {
-      console.log('email inválido!');
+      errorMessage('email inválido!');
       return;
     }
 
     if (!validatePassword(password)) {
-      console.log('contraseña inválida!');
+      errorMessage('contraseña inválida!');
       return;
     }
 
+    CorrectMessage('Login correcto!');
     console.log(email + password)
 
   };
@@ -70,56 +71,39 @@ const Login = () => {
             <form onSubmit={handleLogin}>
               <div className="flex items-center justify-center flex-grow flex-col">
                 <div className="mb-4">
-                  <Input
-                    type="email"
-                    name="email"                        
-                    onChange={handleInputChange}                    
-                    placeholder="you@example.com"
-                    labelPlacement="outside"
-                    startContent={
-                      <Email className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                    }
+                  <InputEmail
+                    name="email"
+                    onChange={handleInputChange}
                   />
                 </div>
 
                 <div className="w-2/3">
-                  <Input
-                    placeholder="password"
-                    name="password"                    
+                  <InputPassword
+                    name="password"
                     onChange={handleInputChange}
-                    endContent={
-                      <button className="focus:outline-none" type="button" onClick={toggleVisibility} aria-label="toggle password visibility">
-                        {isVisible ? (
-                          <WeuiEyesOffOutlined className="text-2xl text-default-400 pointer-events-none" />
-                        ) : (
-                          < WeuiEyesOnOutlined className="text-2xl text-default-400 pointer-events-none" />
-                        )}
-                      </button>
-                    }
-                    type={isVisible ? "text" : "password"}
-                    className="max-w-xs"
-
-                    startContent={
-                      <Password className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
-                    }
                   />
                 </div>
 
                 <div className="mt-4">
-                  <Button
+                  <ButtonNext
+                    text="Iniciar sección"
                     type="submit"
-                    radius="full"
-                    className="bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg w-52"
-                  >
-                    Iniciar seccion
-                  </Button>
+                  />
                 </div>
+
+
 
               </div>
             </form>
 
-
-
+            <div className="mt-4">
+              <button
+                onClick={() => signIn("google")}
+                className="bg-blue-500 text-white px-4 py-2 rounded-md"
+              >
+                Iniciar sesión con Google
+              </button>
+            </div>
 
           </div>
         </div>
