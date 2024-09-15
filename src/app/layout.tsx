@@ -2,10 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
-import { Banner } from "@/components/Publicity/Banner";
 import { Providers } from "@/app/providers";
-import Navbar_Main from "@/components/ui/Navbar/Navbar_Main";
-import { Footer } from "@/components/ui/Footer";
 import 'react-toastify/dist/ReactToastify.css';
 import ToastContainerMessage from "@/messages/ToastContainerMessage";
 import ClientOnlyLayout from "./clientLayout";

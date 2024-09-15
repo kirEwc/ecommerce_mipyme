@@ -1,19 +1,13 @@
 'use client'
 import React from 'react'
 import CardCustom from '../Next_ui_elements/Card/Card'
-import { useRouter } from "next/navigation";
 import { products } from '@/data/products';
 
 
 export const Home_Main_Content = () => {
     
   
-  const router = useRouter();
-
-  const handleClick = (id: string) => {
-    router.push(`/tendencias/${id}`);
-  };
-
+  
 
   return (
     <main className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -26,18 +20,17 @@ export const Home_Main_Content = () => {
         <div className="grid grid-cols-1 mr-3 ml-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {products.map((product) => (
             <div key={product.id} className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-transform duration-300 ease-in-out transform hover:scale-105">
-              <button 
-                onClick={() => handleClick(product.id)} 
-                className="focus:outline-none focus:ring-0 h-full w-full"
-                >
+              
               <CardCustom
+                id={product.id}
+                route={'tendencias'}
                 name={product.name}
                 brand={product.brand}
                 src={product.image}
                 price={product.price}
-                className='w-full h-full'
+                className='w-full h-full dark:bg-gray-800'
               />
-              </button>
+            
             </div>
           ))}
         </div>

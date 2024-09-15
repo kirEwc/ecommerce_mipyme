@@ -2,14 +2,12 @@ import DropdownCustom from "@/components/Next_ui_elements/Dropdown/Dropdown";
 import {
   Bars3Icon,
   HeartIcon,
-  MoonIcon,
   ShoppingCarIcon,
-  SunIcon,
   XMarkIcon,
 } from "@/icons/Icons";
-import { Switch } from "@nextui-org/react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { Switcher } from "./Switcher";
 
 interface NavItem {
   name: string;
@@ -66,18 +64,7 @@ export default function Sidebar() {
           {/* Íconos */}
           <HeartIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
           <ShoppingCarIcon className="h-6 w-6 text-gray-500 hover:text-pink-500 transition duration-300 cursor-pointer" />
-          <Switch
-            defaultSelected
-            size="lg"
-            color="secondary"
-            thumbIcon={({ isSelected = false, className }) =>
-              isSelected ? (
-                <MoonIcon className={className} />
-              ) : (
-                <SunIcon className={className} />
-              )
-            }
-          ></Switch>
+          <Switcher/>
           <DropdownCustom />
         </div>
 
