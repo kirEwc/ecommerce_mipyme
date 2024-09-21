@@ -10,9 +10,9 @@ export default function ClientOnlyLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();  // Obtener la ruta actual
+  const pathname = usePathname();  
 
-  const excludedRoutes = ['/login', '/signup']; // Rutas donde no quieres mostrar Banner, Navbar y Footer
+  const excludedRoutes = ['/authComponents/login', '/authComponents/register', '/authComponents/recoveryPassword','/authComponents/verifyCode','/authComponents/confirmPassword']; 
 
   return (
     <>

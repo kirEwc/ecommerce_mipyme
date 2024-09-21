@@ -17,7 +17,7 @@ const InputPassword: React.FC<PasswordInputProps> = ({
 
   return (
     <Input
-      placeholder="password"
+      placeholder="contrseña"
       name={name}
       type={isVisible ? 'text' : 'password'}
       className={`max-w-xs ${className}`}     
