@@ -1,21 +1,22 @@
 "use client"
 
 import ButtonNext from '@/components/Next_ui_elements/button/ButtonNext';
-import InputEmail from '@/components/Next_ui_elements/inputPassword/InputEmail'
+import InputEmail from '@/components/Next_ui_elements/inputEmail/InputEmail'
+import CustomLink from '@/components/my-components/link/Link';
 import { User } from '@/icons/Icons';
 import React, { useState } from 'react'
 
 const RecoveryPassword = () => {
-    
-    const [valueForm, setValueForm] = useState({
-        email: ''        
-      });
-const handleRecoveryPassword=(e: React.FormEvent<HTMLFormElement>) => {
+
+  const [valueForm, setValueForm] = useState({
+    email: ''
+  });
+  const handleRecoveryPassword = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-}
+  }
 
 
-    
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setValueForm((prevState) => ({
@@ -27,7 +28,7 @@ const handleRecoveryPassword=(e: React.FormEvent<HTMLFormElement>) => {
 
   return (
     <>
-       <div className="h-screen w-screen bg-[url('/images/fondo/1.webp')] bg-cover bg-center bg-no-repeat">
+      <div className="h-screen w-screen bg-[url('/images/fondo/1.webp')] bg-cover bg-center bg-no-repeat">
         <div className="flex justify-center items-center h-full ">
           <div className="border border-t-small border-solid w-80 h-60 rounded-2xl bg-gradient-to-b from-blue-400 to-blue-700 ">
             <div className="flex justify-center mb-4 mt-4">
@@ -42,17 +43,30 @@ const handleRecoveryPassword=(e: React.FormEvent<HTMLFormElement>) => {
                     onChange={handleInputChange}
                   />
                 </div>
-               
+
                 <div className="mt-3">
                   <ButtonNext
                     text="Confirmar"
                     type="submit"
                   />
-                </div>             
+                </div>
 
               </div>
             </form>
-            
+
+            <div className="flex justify-between mt-4 mx-2">
+              <CustomLink
+                href="/"
+                text="Cancelar"
+                className="text-white"
+              />
+              <CustomLink
+                href="/login"
+                text="Login"
+                className="text-white"
+              />
+            </div>
+
 
           </div>
         </div>

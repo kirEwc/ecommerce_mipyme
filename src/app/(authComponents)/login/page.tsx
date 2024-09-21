@@ -8,9 +8,10 @@ import CorrectMessage from "@/messages/CorrectMessage";
 import errorMessage from "@/messages/errorMessage";
 import ButtonNext from "@/components/Next_ui_elements/button/ButtonNext";
 import InputPassword from "@/components/Next_ui_elements/inputPassword/InputPassword";
-import InputEmail from "@/components/Next_ui_elements/inputPassword/InputEmail";
+import InputEmail from "@/components/Next_ui_elements/inputEmail/InputEmail";
 import { signIn } from "next-auth/react";
-import CustomLink from "@/components/Next_ui_elements/link/Link";
+import CustomLink from "@/components/my-components/link/Link";
+import Link from "next/link";
 
 
 
@@ -69,7 +70,7 @@ const Login: React.FC = () => {
 
   return (
     <>
-       <div className="h-screen w-screen bg-[url('/images/fondo/1.webp')] bg-cover bg-center bg-no-repeat">
+      <div className="h-screen w-screen bg-[url('/images/fondo/1.webp')] bg-cover bg-center bg-no-repeat">
         <div className="flex justify-center items-center h-full ">
           <div className="border border-t-small border-solid w-80 h-80 rounded-2xl bg-gradient-to-b from-blue-400 to-blue-700 ">
             <div className="flex justify-center mb-4 mt-4">
@@ -114,16 +115,18 @@ const Login: React.FC = () => {
 
             <div className="flex justify-between mt-2 mx-2">
               <CustomLink
-                href="/code"
+                href="/recoveryPassword"
                 text="Olvidaste la contraseña"
                 className="text-white"
               />
               <CustomLink
-                href="/code"
+                href="/register"
                 text="Regístrate"
                 className="text-white"
               />
             </div>
+
+
 
 
           </div>

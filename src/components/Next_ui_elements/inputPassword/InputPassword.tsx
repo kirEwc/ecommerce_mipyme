@@ -22,7 +22,7 @@ const InputPassword: React.FC<PasswordInputProps> = ({
       type={isVisible ? 'text' : 'password'}
       className={`max-w-xs ${className}`}     
       startContent={
-        <Password className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
+      <Password className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
       }
           
       endContent={
@@ -40,7 +40,7 @@ const InputPassword: React.FC<PasswordInputProps> = ({
         </button>
       }
 
-      {...props} // Pasar otras props como onChange, etc.
+      {...props}
     />
   );
 };

@@ -12,7 +12,7 @@ export default function ClientOnlyLayout({
 }) {
   const pathname = usePathname(); // Obtener la ruta actual
 
-  const excludedRoutes = ['/login', '/signup']; // Rutas donde no quieres mostrar Banner, Navbar y Footer
+  const excludedRoutes = ['/login','/confirmPassword','/recoveryPassword','/register','/verifyCode']; // Rutas donde no quieres mostrar Banner, Navbar y Footer
   const shouldRenderLayout = !excludedRoutes.includes(pathname); // Verificar si se deben renderizar los componentes
 
   return (

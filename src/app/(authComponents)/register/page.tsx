@@ -1,12 +1,12 @@
 "use client";
 
-import InputEmail from '@/components/Next_ui_elements/inputPassword/InputEmail';
+import InputEmail from '@/components/Next_ui_elements/inputEmail/InputEmail';
 import React, { useState } from 'react'
 
 import { User } from '@/icons/Icons';
 import InputPassword from '@/components/Next_ui_elements/inputPassword/InputPassword';
 import ButtonNext from '@/components/Next_ui_elements/button/ButtonNext';
-import CustomLink from '@/components/Next_ui_elements/link/Link';
+import CustomLink from '@/components/my-components/link/Link';
 
 const Register: React.FC = () => {
 
@@ -19,9 +19,9 @@ const Register: React.FC = () => {
   const { email, password } = valueForm;
 
   const handleRegister = () => {
-  
+
   }
-  
+
 
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -35,7 +35,7 @@ const Register: React.FC = () => {
 
   return (
     <>
-       <div className="h-screen w-screen bg-[url('/images/fondo/1.webp')] bg-cover bg-center bg-no-repeat">
+      <div className="h-screen w-screen bg-[url('/images/fondo/1.webp')] bg-cover bg-center bg-no-repeat">
         <div className="flex justify-center items-center h-full ">
           <div className="border border-t-small border-solid w-80 h-80 rounded-2xl bg-gradient-to-b from-blue-400 to-blue-700 ">
             <div className="flex justify-center mb-4 mt-4">
@@ -60,7 +60,7 @@ const Register: React.FC = () => {
 
                 <div className="w-2/3 mt-4">
                   <InputPassword
-                     placeholder="verifica contraseña"
+                    placeholder="verifica contraseña"
                     name="password"
                     onChange={handleInputChange}
                   />
@@ -71,19 +71,19 @@ const Register: React.FC = () => {
                     text="Registrarce"
                     type="submit"
                   />
-                </div>             
+                </div>
 
               </div>
             </form>
 
             <div className="flex justify-between mt-2 mx-2">
               <CustomLink
-                href="/code"
+                href="/"
                 text="Cancelar"
                 className="text-white"
               />
               <CustomLink
-                href="/code"
+                href="/login"
                 text="Login"
                 className="text-white"
               />
