@@ -1,31 +1,28 @@
-import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { MoonIcon, SunIcon } from "@/icons/Icons";
 import { Switch } from "@nextui-org/react";
+import { useTheme } from "@/components/context/ThemeContext";
 
 export const Switcher = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme, setTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  // Manejar el cambio de tema cuando el switch cambia de estado
-  const handleThemeChange = (isSelected: boolean) => {
-    setTheme(isSelected ? "light" : "dark");
-  };
-
   if (!mounted) return null;
+
+  const isLightTheme = theme === "light";
 
   return (
     <Switch
-      checked={theme === "light"}
-      onChange={(e) => handleThemeChange(e.target.checked)} // Manejar el cambio de estado aquí
+      checked={isLightTheme}
+      onChange={toggleTheme} // Usa el toggleTheme directamente
       size="lg"
       color="primary"
       thumbIcon={({ isSelected, className }) =>
-        isSelected ? <SunIcon className={className} /> : <MoonIcon className={className} />
+        isSelected ? <MoonIcon className={className} /> : <SunIcon className={className} />
       }
     />
   );
