@@ -3,3 +3,19 @@
 @tailwind utilities;
 
 
+.dark {
+    --bg-color: #1a202c; /* Fondo oscuro */
+    --text-color: #f7fafc; /* Texto claro */
+}
+
+/* Estilos para modo claro */
+.light {
+    --bg-color: #ffffff; /* Fondo claro */
+    --text-color: #1a202c; /* Texto oscuro */
+}
+
+/* Usa las variables en tu CSS */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
