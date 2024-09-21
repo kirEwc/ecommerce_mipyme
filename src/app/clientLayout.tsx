@@ -10,16 +10,17 @@ export default function ClientOnlyLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();  // Obtener la ruta actual
+  const pathname = usePathname(); // Obtener la ruta actual
 
   const excludedRoutes = ['/login', '/signup']; // Rutas donde no quieres mostrar Banner, Navbar y Footer
+  const shouldRenderLayout = !excludedRoutes.includes(pathname); // Verificar si se deben renderizar los componentes
 
   return (
     <>
-      {!excludedRoutes.includes(pathname) && <Banner />} 
-      {!excludedRoutes.includes(pathname) && <Navbar_Main />} 
-      {children} 
-      {!excludedRoutes.includes(pathname) && <Footer />} 
+      {shouldRenderLayout && <Banner />}
+      {shouldRenderLayout && <Navbar_Main />}
+      {children}
+      {shouldRenderLayout && <Footer />}
     </>
   );
 }
