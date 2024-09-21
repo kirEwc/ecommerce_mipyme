@@ -9,6 +9,8 @@ export const PublicityLeft = () => {
               src={"/images/publicity/03.webp"}
               alt='publicityLeft'
               fill
+              sizes="(50vw, 50vh)"
+              priority
               className="object-cover object-center rounded-xl"
           />
           </div>
