@@ -1,37 +1,62 @@
 "use client";
 
-import InputEmail from '@/components/Next_ui_elements/inputEmail/InputEmail';
-import React, { useState } from 'react'
+import { useRouter } from 'next/navigation';
+import React from 'react'
 
 import { User } from '@/icons/Icons';
+import { validationRegister } from '@/app/validation/validationRegister'; 
+import InputEmail from '@/components/Next_ui_elements/inputEmail/InputEmail';
 import InputPassword from '@/components/Next_ui_elements/inputPassword/InputPassword';
 import ButtonNext from '@/components/Next_ui_elements/button/ButtonNext';
 import CustomLink from '@/components/my-components/link/Link';
+import ApiRequest from '@/services/ApiRequest';
+import ErrorMessage from '../../../messages/ErrorMessage';
+
 
 const Register: React.FC = () => {
-
-  const [valueForm, setValueForm] = useState({
-    email: '',
-    password: '',
-  });
+  const router = useRouter();
 
 
-  const { email, password } = valueForm;
+  const handleRegister = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
 
-  const handleRegister = () => {
+    const { email, password, confirmPassword } = Object.fromEntries(formData);
+
+    const validatedFields = validationRegister.safeParse({
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+    })
+
+    if (!validatedFields.success) {
+      const firstError = validatedFields.error.errors[0];
+      const messageError = String(firstError.message);
+      ErrorMessage(messageError);
+    } else {
+      try {
+        const response = await ApiRequest({
+          method: 'POST',
+          url: 'https://fbbe-195-181-163-8.ngrok-free.app/api/User/login',
+          body: {
+            email: email,
+            password: password,
+          },
+        });
+
+        if (response.status === 200) {
+          router.push('/Login');
+        } else {
+          ErrorMessage('Error al registrarce');
+        }
+
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
 
   }
-
-
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setValueForm((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
-
-  };
 
   return (
     <>
@@ -44,29 +69,26 @@ const Register: React.FC = () => {
 
             <form onSubmit={handleRegister}>
               <div className="flex items-center justify-center flex-grow flex-col">
-                <div className="mb-4">
+                <div className="mb-4 w-2/3">
                   <InputEmail
                     name="email"
-                    onChange={handleInputChange}
                   />
                 </div>
 
                 <div className="w-2/3">
                   <InputPassword
                     name="password"
-                    onChange={handleInputChange}
                   />
                 </div>
 
                 <div className="w-2/3 mt-4">
                   <InputPassword
-                    placeholder="verifica contraseña"
-                    name="password"
-                    onChange={handleInputChange}
+                    placeholder="verificar contraseña"
+                    name="confirmPassword"
                   />
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-3 w-2/3">
                   <ButtonNext
                     text="Registrarce"
                     type="submit"

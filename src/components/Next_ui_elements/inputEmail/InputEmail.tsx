@@ -6,17 +6,17 @@ import { Email } from '@/icons/Icons';
 
 interface EmailInputProps extends Omit<InputProps, 'type'> {
   name?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;  
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;  
+  
 }
 
 const InputEmail: React.FC<EmailInputProps> = ({ name = 'email', onChange, className = '', ...props }) => {
   return (
-    <Input
-      type="email"  
+    <Input      
       name={name}    
       onChange={onChange}  
-      placeholder="you@example.com"
-      labelPlacement="outside"
+      placeholder="email"
+      labelPlacement="outside"     
       startContent={
         <Email className="text-2xl text-default-400 pointer-events-none flex-shrink-0" />
       }

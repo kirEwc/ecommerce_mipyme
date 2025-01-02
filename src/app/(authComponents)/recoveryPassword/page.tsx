@@ -1,30 +1,61 @@
 "use client"
 
+import { useRouter } from 'next/navigation';
+import React from 'react'  
+
+import { User } from '@/icons/Icons';
+
+import { validationRecoberyPassword } from '@/app/validation/validationrecoberyPassword';
 import ButtonNext from '@/components/Next_ui_elements/button/ButtonNext';
 import InputEmail from '@/components/Next_ui_elements/inputEmail/InputEmail'
 import CustomLink from '@/components/my-components/link/Link';
-import { User } from '@/icons/Icons';
-import React, { useState } from 'react'
+import ApiRequest from '@/services/ApiRequest';
+import ErrorMessage from '../../../messages/ErrorMessage';
 
 const RecoveryPassword = () => {
+  const router = useRouter();
 
-  const [valueForm, setValueForm] = useState({
-    email: ''
-  });
-  const handleRecoveryPassword = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+
+  const handleRecoveryPassword =async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = new FormData(event.currentTarget);
+    const { email } = Object.fromEntries(formData);
+    const validatedFields = validationRecoberyPassword.safeParse({
+      email: email,
+    })
+
+    if (!validatedFields.success) {
+      const firstError = validatedFields.error.errors[0];
+      const messageError = String(firstError.message);
+      ErrorMessage(messageError);
+    }if (validatedFields.success) {
+
+      try {
+        const response = await ApiRequest({
+          method: 'POST',
+          url: 'https://fbbe-195-181-163-8.ngrok-free.app/api/User/login',
+          body: {
+            email: email,            
+          },
+        });
+
+        if (response?.status === 200) {
+          router.push('/verifyCode');
+        } else {
+          ErrorMessage('Credenciales incorrectas');
+        }
+
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+
   }
 
 
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setValueForm((prevState) => ({
-      ...prevState,
-      [name]: value,
-    }));
 
-  };
 
   return (
     <>
@@ -37,14 +68,13 @@ const RecoveryPassword = () => {
 
             <form onSubmit={handleRecoveryPassword}>
               <div className="flex items-center justify-center flex-grow flex-col">
-                <div className="mb-4">
+                <div className="mb-4 w-2/3">
                   <InputEmail
-                    name="email"
-                    onChange={handleInputChange}
+                    name="email"                    
                   />
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-3 w-2/3">
                   <ButtonNext
                     text="Confirmar"
                     type="submit"

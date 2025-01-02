@@ -1,6 +1,6 @@
 import { Bounce, toast } from "react-toastify"
 
-const errorMessage = (message: string) => {
+const ErrorMessage = (message: string) => {
   return (
     toast.error(message, {
       position: "top-right",
@@ -15,4 +15,4 @@ const errorMessage = (message: string) => {
     })
   )
 }
-export default errorMessage;
+export default ErrorMessage;
