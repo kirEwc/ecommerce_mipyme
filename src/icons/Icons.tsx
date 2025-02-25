@@ -130,6 +130,25 @@ export function F7MoneyDollar(props: SVGProps<SVGSVGElement>) {
 }
 
 
+//technology
+export function HugeiconsNanoTechnology(props: SVGProps<SVGSVGElement>) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" {...props}><g fill="none" stroke="#4064f2" strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} color="#4064f2"><path d="m5 16l5-3m4-2l5-3m-7-3v5m0 4v5M5 8l5 3m4 2l5 3m1.5-7v5.5m-7 6l5.5-3m-14.5 0l6 3m-7-5.5V9m1-2.5l6-3m9 3l-6-3"></path><circle cx={12} cy={3.5} r={1.5}></circle><circle cx={12} cy={20.5} r={1.5}></circle><circle cx={3.5} cy={7.5} r={1.5}></circle><circle cx={20.5} cy={7.5} r={1.5}></circle><circle cx={20.5} cy={16.5} r={1.5}></circle><circle cx={3.5} cy={16.5} r={1.5}></circle><path d="m12 9.75l2 1.125v2.25l-2 1.125l-2-1.125v-2.25z"></path></g></svg>);
+}
+
+//Appliances
+export function IconParkPlug(props: SVGProps<SVGSVGElement>) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 48 48" {...props}><g fill="none" strokeLinejoin="round" strokeWidth={4}><path fill="#4064f2" stroke="#000" d="M6 14H42V24C38 32 32 36 24 36C16 36 10 32 6 24V14Z"></path><path stroke="#000" strokeLinecap="round" d="M33 34L32 44H16L15 34"></path><path stroke="#fff" strokeLinecap="round" d="M22 24H26"></path><path stroke="#000" strokeLinecap="round" d="M16 4L16 12"></path><path stroke="#000" strokeLinecap="round" d="M32 4V12"></path></g></svg>);
+}
+
+//food
+export function PhBowlFoodFill(props: SVGProps<SVGSVGElement>) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 256 256" {...props}><path fill="#4064f2" d="M224 104h-8.37a88 88 0 0 0-175.26 0H32a8 8 0 0 0-8 8a104.35 104.35 0 0 0 56 92.28V208a16 16 0 0 0 16 16h64a16 16 0 0 0 16-16v-3.72A104.35 104.35 0 0 0 232 112a8 8 0 0 0-8-8m-50.52-47.77q2.75 2.25 5.27 4.75a87.92 87.92 0 0 0-49.15 43h-29.5A72.26 72.26 0 0 1 168 56c1.83 0 3.66.09 5.48.23M148.12 104a71.84 71.84 0 0 1 41.27-29.57A71.45 71.45 0 0 1 199.54 104ZM128 40a72 72 0 0 1 19 2.57A88.36 88.36 0 0 0 83.33 104H56.46A72.08 72.08 0 0 1 128 40"></path></svg>);
+}
+
+
+
+
+
 //add product
 export function MaterialSymbolsBoxAddRounded(props: SVGProps<SVGSVGElement>) {
 	return (<svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" {...props}><path fill="#fff" d="M5 21q-.825 0-1.412-.587T3 19V6.525q0-.35.113-.675t.337-.6L4.7 3.725q.275-.35.687-.538T6.25 3h11.5q.45 0 .863.188t.687.537l1.25 1.525q.225.275.338.6t.112.675V10.2q0 .45-.363.725t-.812.175q-.65-.125-1.338-.075t-1.312.25q-.425.125-.8-.112T16 10.5V8H8v6.375q0 .575.475.863t.975.037L12 14l.775.375q.3.15.413.45t.012.625q-.125.35-.162.738t-.038.787q0 .725.175 1.45T13.7 19.8q.225.425.025.813T13.1 21zm13-3h-2q-.425 0-.712-.288T15 17t.288-.712T16 16h2v-2q0-.425.288-.712T19 13t.713.288T20 14v2h2q.425 0 .713.288T23 17t-.288.713T22 18h-2v2q0 .425-.288.713T19 21t-.712-.288T18 20zM5.4 6h13.2l-.85-1H6.25z"></path></svg>);
@@ -140,3 +159,24 @@ export function MaterialSymbolsBoxAddRounded(props: SVGProps<SVGSVGElement>) {
 export function FluentCalendarCancel20Filled(props: SVGProps<SVGSVGElement>) {
 	return (<svg xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 20 20" {...props}><path fill="#fff" d="M17 7v2.6A5.5 5.5 0 0 0 9.6 17H5.5A2.5 2.5 0 0 1 3 14.5V7zm-2.5-4A2.5 2.5 0 0 1 17 5.5V6H3v-.5A2.5 2.5 0 0 1 5.5 3zM19 14.5a4.5 4.5 0 1 1-9 0a4.5 4.5 0 0 1 9 0m-4.5.707l1.146 1.147a.5.5 0 0 0 .708-.708L15.207 14.5l1.147-1.146a.5.5 0 0 0-.708-.708L14.5 13.793l-1.146-1.147a.5.5 0 0 0-.708.708l1.147 1.146l-1.147 1.146a.5.5 0 0 0 .708.708z"></path></svg>);
 }
+
+//Selct product
+export function MiSelect(props: SVGProps<SVGSVGElement>) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24" {...props}><path fill="black" d="M12 4a1 1 0 0 1 .707.293l4 4a1 1 0 0 1-1.414 1.414L12 6.414L8.707 9.707a1 1 0 0 1-1.414-1.414l4-4A1 1 0 0 1 12 4M7.293 14.293a1 1 0 0 1 1.414 0L12 17.586l3.293-3.293a1 1 0 0 1 1.414 1.414l-4 4a1 1 0 0 1-1.414 0l-4-4a1 1 0 0 1 0-1.414"></path></svg>);
+}
+
+//EpSelect product
+export function EpSelect(props: SVGProps<SVGSVGElement>) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 1024 1024" {...props}><path fill="black" d="M77.248 415.04a64 64 0 0 1 90.496 0l226.304 226.304L846.528 188.8a64 64 0 1 1 90.56 90.496l-543.04 543.04l-316.8-316.8a64 64 0 0 1 0-90.496"></path></svg>);
+}
+
+//IconParkCamera
+export function IconParkCamera(props: SVGProps<SVGSVGElement>) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width={48} height={48} viewBox="0 0 48 48" {...props}><g fill="none" strokeLinejoin="round" strokeWidth={4}><path fill="#2f88ff" stroke="#000" d="M15 12L18 6H30L33 12H15Z"></path><rect width={40} height={30} x={4} y={12} fill="#2f88ff" stroke="#000" rx={3}></rect><path fill="#43ccf8" stroke="#fff" d="M24 35C28.4183 35 32 31.4183 32 27C32 22.5817 28.4183 19 24 19C19.5817 19 16 22.5817 16 27C16 31.4183 19.5817 35 24 35Z"></path></g></svg>);
+}
+
+//TablerCameraX
+export function TablerCameraX(props: SVGProps<SVGSVGElement>) {
+	return (<svg xmlns="http://www.w3.org/2000/svg" width={48} height={48} viewBox="0 0 24 24" {...props}><g fill="none" stroke="#0e6ce7" strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}><path d="M13.5 20H5a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1a2 2 0 0 0 2-2a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1a2 2 0 0 0 2 2h1a2 2 0 0 1 2 2v4"></path><path d="M9 13a3 3 0 1 0 6 0a3 3 0 0 0-6 0m13 9l-5-5m0 5l5-5"></path></g></svg>);
+}
+

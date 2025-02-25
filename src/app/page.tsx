@@ -1,8 +1,8 @@
-import Carousel from "@/components/my-components/Carousel/Carousel";
+import Carousel from "@/components/my-components/carousel/Carousel";
 import { Home_Main_Content } from "@/components/main-content/Home_Main_Content";
-import { PublicityLeft } from "@/components/my-components/Publicity/PublicityLeft";
-import { PublicityRight } from "@/components/my-components/Publicity/PublicityRight";
-import { images } from "@/components/my-components/Carousel/ImagePath";
+import { PublicityLeft } from "@/components/my-components/publicity/PublicityLeft";
+import { PublicityRight } from "@/components/my-components/publicity/PublicityRight";
+import { images } from "@/components/my-components/carousel/ImagePath";
 import { Divider } from "@nextui-org/react";
 
 

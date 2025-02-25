@@ -22,6 +22,7 @@ const InputNumberNext: React.FC<NumberInputProps> = ({
       'ArrowLeft',
       'ArrowRight',
       'Enter',
+      '.',
     ];
     
     if (
